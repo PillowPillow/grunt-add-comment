@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: 'test/files/',
 					src: ['**/*.js', '**/*.json'],
-					dest: '/files/'
+					dest: 'test/files/'
 				}]
 			}
 		}
