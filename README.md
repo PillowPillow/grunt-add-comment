@@ -61,7 +61,7 @@ comment syntax for each extensions.
 
 ### Usage Examples
 
-#### Custom Options
+#### Sample Options
 
 ```js
 grunt.initConfig({
