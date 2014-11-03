@@ -28,6 +28,8 @@ module.exports = function(grunt) {
 		if(!options.syntaxes['*'])
 			options.syntaxes['*'] = '//';
 
+		var count = 0;
+
 		var comment = '', content, extension, commentSyntax;
 		this.files.forEach(function(el) {
 
@@ -52,8 +54,11 @@ module.exports = function(grunt) {
 				content = options.prepend ? comment + grunt.file.read(el.src[0]) : grunt.file.read(el.src[0]) + options.carriageReturn + comment;
 
 				grunt.file.write(el.dest, content);
-				grunt.log.writeln('File "' + el.dest + '" edited.');
+				grunt.log.debug('File "' + el.dest + '" edited.');
+				count++;
 			});
+
+			grunt.log.ok(count + ' files edited');
 		});
 	});
 
