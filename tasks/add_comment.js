@@ -58,8 +58,8 @@ module.exports = function(grunt) {
 				count++;
 			});
 
-			grunt.log.ok(count + ' files edited');
 		});
+		grunt.log.ok(count + ' files edited');
 	});
 
 };
