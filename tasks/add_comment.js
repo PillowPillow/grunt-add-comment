@@ -48,7 +48,6 @@ module.exports = function(grunt) {
 
 				comment = '';
 				for(var i = 0; i<options.comments.length; i++) {
-					console.log(commentSyntax)
 					if(typeof commentSyntax === 'string')
 						comment += commentSyntax + ' ' + options.comments[i] + options.carriageReturn;
 					else
