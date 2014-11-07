@@ -73,7 +73,8 @@ grunt.initConfig({
         prepend: true,
         syntaxes: {
           '.js': '//',
-          '.sql': '--'
+          '.json': '--',
+          '.css': ['/*', '*/']
         }
       },
       files: [{

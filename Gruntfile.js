@@ -19,7 +19,8 @@ module.exports = function(grunt) {
 					prepend: true,
 					syntaxes: {
 						'.js': '//',
-						'.json': '--'
+						'.json': '--',
+						'.css': ['/*', '*/']
 					}
 				},
 				files: [{

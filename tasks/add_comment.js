@@ -43,12 +43,16 @@ module.exports = function(grunt) {
 				content = grunt.file.read(filePath);
 
 				extension = Path.extname(filePath);
-				commentSyntax = ( extension in options.syntaxes ? options.syntaxes[extension] : options.syntaxes['*'] ) + ' ';
+				commentSyntax = ( extension in options.syntaxes ? options.syntaxes[extension] : options.syntaxes['*'] );
 
 
 				comment = '';
 				for(var i = 0; i<options.comments.length; i++) {
-					comment += commentSyntax + options.comments[i] + options.carriageReturn;
+					console.log(commentSyntax)
+					if(typeof commentSyntax === 'string')
+						comment += commentSyntax + ' ' + options.comments[i] + options.carriageReturn;
+					else
+						comment += commentSyntax[0] + ' ' + options.comments[i] + (commentSyntax.length > 1 ? ' ' + commentSyntax[1] : '') + options.carriageReturn;
 				}
 
 				content = options.prepend ? comment + grunt.file.read(el.src[0]) : grunt.file.read(el.src[0]) + options.carriageReturn + comment;
